@@ -1,10 +1,13 @@
 import fs from 'fs'
+import path from 'path'
 
 import { standardAuthHandler } from '@redwoodjs/cli-helpers'
 
 import { Args } from './setup'
 
-const { version } = JSON.parse(fs.readFileSync('../package.json', 'utf-8'))
+const { version } = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf-8')
+)
 
 export async function handler({ force: forceArg }: Args) {
   standardAuthHandler({
@@ -12,10 +15,10 @@ export async function handler({ force: forceArg }: Args) {
     forceArg,
     provider: 'nhost',
     authDecoderImport:
-      "import { nhostAuthDecoder as authDecoder } from '@redwoodjs/auth-providers-api'",
-    apiPackages: [`@redwoodjs/auth-providers-api@${version}`],
+      "import { authDecoder } from '@redwoodjs/auth-nhost-api'",
+    apiPackages: [`@redwoodjs/auth-nhost-api@${version}`],
     webPackages: [
-      `@redwoodjs/auth-providers-web@${version}`,
+      `@redwoodjs/auth-nhost-web@${version}`,
       '@nhost/nhost-js',
     ],
     notes: [
