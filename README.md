@@ -6,6 +6,16 @@ Redwood Nhost Auth Integration
 $ npm install
 $ npm run build
 ```
+
+## Installing locally
+Build this project. Then in the project you want to install auth-nhost in locally run:
+```
+$ yarn add {{path to auth-nhost}}
+```
+For example:
+```
+$ yarn add /Users/user/open-source/auth-nhost
+```
 ## Publishing (Yalla)
 Login to npm:
 ```
