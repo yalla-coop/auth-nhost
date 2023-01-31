@@ -1,6 +1,28 @@
 Redwood Nhost Auth Integration
 ==============================
 
+## Building
+```
+$ npm install
+$ npm run build
+```
+## Publishing (Yalla)
+Login to npm:
+```
+$ npm login
+npm notice Log in on https://registry.npmjs.org/
+Username: yalla-cooperative
+Password: {{Find in Bitwarden (Npm)}}
+Email: (this IS public) hello@yallacooperative.com
+npm notice Please check your email for a one-time password (OTP)
+Enter one-time password: {{Find in Gmail}}
+```
+You may need to update the "version" field in package.json. Then:
+```
+$ npm publish
+``` 
+
+## Redwood Docs
 > **Warning**
 >
 > This package is no longer maintained
